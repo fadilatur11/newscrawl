@@ -43,6 +43,10 @@
         <link rel="canonical" href="{{url()->current()}}" />
         <meta name="pagesize" content="1"  />
         <meta name="pagenumber" content="1"  />
+		@else
+		<title>NEWS</title>
+	   	<meta property="og:type" content="article" />
+    	<meta property="og:site_name" content="detiknews" />
 		@endif
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
 	<link rel="stylesheet" href="{{$assets}}/css/framework7.min.css">
