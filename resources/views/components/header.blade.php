@@ -6,11 +6,12 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
 	<meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
-	<title>NEWS</title>
-	<meta name="description" content="Gubernur Jawa Tengah Ganjar Pranowo menjelaskan perkantoran di dinas jajarannya sedang bersiap untuk melakukan penerapan new normal." itemprop="description" /><meta name="originalTitle" content="Begini Skenario Ganjar untuk Persiapan New Normal di Jawa Tengah" />
+		@if (Request::segment(1) == 'detail')
+		<title></title>
 	   	<meta property="og:type" content="article" />
     	<meta property="og:site_name" content="detiknews" />
-		@if (Request::segment(1) == 'detail')
+		<meta name="description" content="" itemprop="description" />
+		<meta name="originalTitle" content="" />
     	<meta property="og:title" content="" />
     	<meta property="og:image" content="" />
     	<meta property="og:description" content="" />
@@ -23,20 +24,19 @@
         <meta name="publishdate" content=""  />
         <meta name="platform" content="desktop"  />
         <meta name="author" content=""  />
-        <meta content="Gubernur Jawa Tengah Ganjar Pranowo menjelaskan perkantoran di dinas jajarannya sedang bersiap untuk melakukan penerapan new normal." itemprop="headline" />
-        <meta name="thumbnailUrl" content="https://akcdn.detik.net.id/community/media/visual/2020/04/28/cbed938c-0cc0-4edf-a0c6-628f45c26381_169.jpeg?w=650" itemprop="thumbnailUrl" />
+        <meta content="" itemprop="headline" />
+        <meta name="thumbnailUrl" content="" itemprop="thumbnailUrl" />
         <meta property="article:author" content="https://www.facebook.com/detikcom" itemprop="author" />
         <meta property="article:publisher" content="https://www.facebook.com/detikcom" />
-        <meta name="pubdate" content="2020-05-26T14-55-06Z" itemprop="datePublished" />
-        <meta content="2020-05-26T14-45-51Z" itemprop="dateCreated" />
+        <meta name="pubdate" content="" itemprop="datePublished" />
         <meta content="{{url()->current()}}" itemprop="url" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@detikcom" />
         <meta name="twitter:site:id" content="@detikcom" />
         <meta name="twitter:creator" content="@detikcom" />
-        <meta name="twitter:description" content="Gubernur Jawa Tengah Ganjar Pranowo menjelaskan perkantoran di dinas jajarannya sedang bersiap untuk melakukan penerapan new normal." />
-        <meta name="twitter:image" content="https://akcdn.detik.net.id/api/wm/2020/04/28/cbed938c-0cc0-4edf-a0c6-628f45c26381_169.jpeg?wid=60&w=650&v=1&t=jpeg" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:image" content="" />
         <link rel="alternate" href="{{url()->current()}}"/>
         <link rel="alternate" media="only screen and (max-width: 640px)" href="{{url()->current()}}">
                         

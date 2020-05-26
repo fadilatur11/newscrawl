@@ -60,7 +60,7 @@
                      <a class="external" href="{{ url('/detail/'.$article->id.'/'.$article->slug) }}">
                         <h5>{{$article->title}}</h5>
                      </a>
-                     <p class="date">20 minute ago</p>
+                     <p class="date">{{Carbon\Carbon::parse(date('Y-m-d',$article->published_at))->diffForHumans()}}</p>
                   </div>
                </div>
             </div>
