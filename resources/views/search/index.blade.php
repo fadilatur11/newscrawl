@@ -28,7 +28,7 @@
                   <div class="col-50">
                      <div class="content">
                         <a class="external" href="{{ url('/detail/'.$data['id'].'/'.$data['slug']) }}">
-                        <img alt="" class="lazy-fade-in lazy-loaded" src="{{$tim.$data['image']}}&w=500&h=325&zc=1">
+                        <img alt="{{$data['title']}}" class="lazy-fade-in lazy-loaded" src="{{$data['image']}}">
                         </a>
                      </div>
                   </div>

@@ -6,7 +6,7 @@
              </a>
                 <div class="single-post">
                     <div class="header">
-                        <img src="{{$tim.$detail['image']}}&w=800&zc=1" alt="">
+                        <img src="{{$detail['image']}}" alt="{{ucwords($detail['title'])}}">
                     </div>
                     <div class="wrap-content">
                         <h4>{{ucwords($detail['title'])}}</h4>
@@ -17,7 +17,7 @@
                         <p>{!! $detail['content'] !!}</p>
                     </div>
                     <input type="hidden" id="deskripsi" value="{!! str_replace('<p>','',Str::words($detail['content'],17,'....')) !!}">
-                    <input type="hidden" id="thumbnail" value="{{$tim.$detail['image']}}&w=800&zc=1">
+                    <input type="hidden" id="thumbnail" value="{{$detail['image']}}&w=800&zc=1">
                     <input type="hidden" id="title" value="{{ucwords($detail['title'])}}">
                     <input type="hidden" id="author" value="{{ucwords($detail['author'])}}">
                     </div>

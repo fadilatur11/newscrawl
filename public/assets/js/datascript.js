@@ -20,7 +20,7 @@
    				'<div class="col-50">'+
    					'<div class="content">'+
    						'<a class="external" href="'+domain+'detail/'+getmore[a].id+'/'+getmore[a].slug+'">'+
-   							'<img src="'+domain+'timthumb.php?src='+getmore[a].image+'&w=500&h=325&zc=1" alt="'+getmore[a].title+'">'+
+   							'<img src="'+getmore[a].image+'" alt="'+getmore[a].title+'">'+
    						'</a>'+
    					'</div>'+
    				'</div>'+
