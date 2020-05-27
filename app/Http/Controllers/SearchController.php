@@ -15,17 +15,20 @@ class SearchController extends Controller
     public function index(Request $req)
     {
         $keywords = $req->get('keywords');
+
         $article = new PostModel;
-        $search = $article->search($keywords);
-        return view('search.index',['search'=>$search,'keywords'=>$keywords]);
+
+        return view('search.index', [
+            'search' => $article->search($keywords),
+            'keywords' => $keywords
+        ]);
     }
 
     function more($keywords,$offset)
     {
         $article = new PostModel;
-        $search = $article->searchmore($keywords,$offset);
-        return response()->json($search);
 
+        return response()->json($article->searchmore($keywords, $offset));
     }
 
 }

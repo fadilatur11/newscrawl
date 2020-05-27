@@ -44,7 +44,8 @@ class HomeController extends Controller
     {
         $article = new PostModel;
 
-        return response()->view('home.sitemap', ['sitemap' => $article->sitemap()])->header('Content-Type', 'text/xml');
+        return response()->view('home.sitemap', ['sitemap' => $article->sitemap()])
+                         ->header('Content-Type', 'text/xml');
     }
 
 }

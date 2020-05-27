@@ -15,8 +15,8 @@ class DetailController extends Controller
     public function index($id)
     {
         $article = new PostModel;
-        $detail = $article->detail($id);
-        return view('detail.index',['detail'=>$detail]);
+
+        return view('detail.index', ['detail' => $article->detail($id)]);
     }
 
     /**
