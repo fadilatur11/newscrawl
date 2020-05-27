@@ -27,18 +27,18 @@
                <div class="row">
                   <div class="col-50">
                      <div class="content">
-                        <a class="external" href="{{ url('/detail/'.$data->id.'/'.$data->slug) }}">
-                        <img alt="" class="lazy-fade-in lazy-loaded" src="{{$tim.$data->image}}&w=500&h=325&zc=1">
+                        <a class="external" href="{{ url('/detail/'.$data['id'].'/'.$data['slug']) }}">
+                        <img alt="" class="lazy-fade-in lazy-loaded" src="{{$tim.$data['image']}}&w=500&h=325&zc=1">
                         </a>
                      </div>
                   </div>
                   <div class="col-50">
                      <div class="content-text">
-                        <span>{{$data->author}}</span>
-                        <a class="external" href="{{ url('/detail/'.$data->id.'/'.$data->slug) }}">
-                           <h5>{{$data->title}}</h5>
+                        <span>{{$data['author']}}</span>
+                        <a class="external" href="{{ url('/detail/'.$data['id'].'/'.$data['slug']) }}">
+                           <h5>{{$data['title']}}</h5>
                         </a>
-                        <p class="date">20 minute ago</p>
+                        <p class="date">{{Carbon\Carbon::parse(date('Y-m-d',$data['published_at']))->diffForHumans()}}</p>
                      </div>
                   </div>
                </div>

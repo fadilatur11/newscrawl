@@ -27,12 +27,12 @@
                <div class="swiper-wrapper">
                   @foreach($slider as $getslider)
                   <div class="swiper-slide">
-                     <img src="{{$tim.$getslider->image}}&w=800&h=500&zc=1" alt="{{$getslider->title}}">
+                     <img src="{{$tim.$getslider['image']}}&w=800&h=500&zc=1" alt="{{$getslider['title']}}">
                      <div class="mask"></div>
                      <div class="caption">
-                        <span>{{$getslider->author}}</span>
-                        <a class="external" href="{{ url('/detail/'.$getslider->id.'/'.$getslider->slug) }}">
-                           <h4>{{$getslider->title}}</h4>
+                        <span>{{$getslider['author']}}</span>
+                        <a class="external" href="{{ url('/detail/'.$getslider['id'].'/'.$getslider['slug']) }}">
+                           <h4>{{$getslider['title']}}</h4>
                         </a>
                      </div>
                   </div>
@@ -49,18 +49,18 @@
             <div class="row">
                <div class="col-50">
                   <div class="content">
-                     <a class="external" href="{{ url('/detail/'.$article->id.'/'.$article->slug) }}">
-                     <img data-src="{{$tim.$article->image}}&w=500&h=325&zc=1" alt="" class="lazy lazy-fade-in">
+                     <a class="external" href="{{ url('/detail/'.$article['id'].'/'.$article['slug']) }}">
+                     <img data-src="{{$tim.$article['image']}}&w=500&h=325&zc=1" alt="" class="lazy lazy-fade-in">
                      </a>
                   </div>
                </div>
                <div class="col-50">
                   <div class="content-text">
-                     <span>{{$article->author}}</span>
-                     <a class="external" href="{{ url('/detail/'.$article->id.'/'.$article->slug) }}">
-                        <h5>{{$article->title}}</h5>
+                     <span>{{$article['author']}}</span>
+                     <a class="external" href="{{ url('/detail/'.$article['id'].'/'.$article['slug']) }}">
+                        <h5>{{$article['title']}}</h5>
                      </a>
-                     <p class="date">{{Carbon\Carbon::parse(date('Y-m-d',$article->published_at))->diffForHumans()}}</p>
+                     <p class="date">{{Carbon\Carbon::parse(date('Y-m-d',$article['published_at']))->diffForHumans()}}</p>
                   </div>
                </div>
             </div>

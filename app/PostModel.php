@@ -14,7 +14,8 @@ class PostModel extends Model
         ->offset(6)
         ->limit(10)
         ->orderBy('published_at','desc')
-        ->get();
+        ->get()
+        ->toArray();;
         return $data;
     }
 
@@ -23,7 +24,8 @@ class PostModel extends Model
         $data = PostModel::select('id','title','image','slug','link','author','published_at')
         ->limit(5)
         ->orderBy('published_at','desc')
-        ->get();
+        ->get()
+        ->toArray();
         return $data;
     }
 
@@ -31,7 +33,8 @@ class PostModel extends Model
     {
         $data = PostModel::select('id','title','image','slug','link','author','published_at','content')
         ->where('id','=',$id)
-        ->first();
+        ->first()
+        ->toArray();;
         return $data;
     }
 
@@ -41,7 +44,8 @@ class PostModel extends Model
         ->limit(10)
         ->offset($offset)
         ->orderBy('published_at','desc')
-        ->get();
+        ->get()
+        ->toArray();;
         return $data;
     }
 
@@ -52,7 +56,8 @@ class PostModel extends Model
         ->limit(20)
         ->where('title','LIKE', '%'.$keywords.'%')
         ->orderBy('published_at','desc')
-        ->get();
+        ->get()
+        ->toArray();;
         return $data;
     }
 
@@ -63,7 +68,8 @@ class PostModel extends Model
         ->limit(10)
         ->where('title','LIKE', '%'.$keywords.'%')
         ->orderBy('published_at','desc')
-        ->get();
+        ->get()
+        ->toArray();;
         return $data;
     }
 
@@ -73,7 +79,8 @@ class PostModel extends Model
         ->offset(0)
         ->limit(200)
         ->orderBy('published_at','desc')
-        ->get();
+        ->get()
+        ->toArray();;
         return $data;
     }
 }
