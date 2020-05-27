@@ -8,30 +8,44 @@ use App\PostModel;
 class HomeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * index
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
     public function index()
     {
         $article = new PostModel;
-        $getdata = $article->article();
-        $slider = $article->slider();
-        return view('home.index',['getarticle'=>$getdata,'slider'=>$slider]);
+
+        return view('home.index', [
+            'getarticle' => $article->article(),
+            'slider' => $article->slider()
+        ]);
     }
 
+    /**
+     * more
+     *
+     * @param  mixed $offset
+     * @return void
+     */
     public function more($offset)
     {
         $article = new PostModel;
-        $more = $article->more($offset);
-        return response()->json($more);
+
+        return response()->json($article->more($offset));
     }
 
+    /**
+     * sitemap
+     *
+     * @return void
+     */
     public function sitemap()
     {
         $article = new PostModel;
-        $sitemap = $article->sitemap();
-        return response()->view('home.sitemap', ['sitemap'=>$sitemap])->header('Content-Type', 'text/xml');
+
+        return response()->view('home.sitemap', ['sitemap' => $article->sitemap()])
+                         ->header('Content-Type', 'text/xml');
     }
 
 }
