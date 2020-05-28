@@ -7,7 +7,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
 	<meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
 	@include('detail.meta')
-	@yield('konten')
+	@yield('metahome')
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
 	<link rel="stylesheet" href="{{$assets}}/css/framework7.min.css">
 	<link rel="stylesheet" href="{{$assets}}/css/framework7-icons.css">

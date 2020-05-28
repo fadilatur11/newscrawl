@@ -1,4 +1,4 @@
-<x-header/>
+<x-headerhome/>
 <div class="view view-main view-init ios-edges" data-url="/">
    <!-- navbar -->
    <div class="page page-home">

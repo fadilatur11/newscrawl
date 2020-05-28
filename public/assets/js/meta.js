@@ -4,18 +4,20 @@ $(document).ready(function(){
     var deskripsi = $("#deskripsi").val();
     var publish = $('#publish').val();
     var author = $('#author').val();
+    var currenUrl = document.URL;
     // setup meta
+    $('meta[name="title"]').attr("content",title);
+    $('meta[name="twitter:title"]').attr("content",title);
+    $('meta[name="keywords"]').attr("content",title);
+    $('meta[itemprop="name"]').attr("content",title);
     $('meta[property="og:title"]').attr("content",title);
+    $('meta[itemprop="image"]').attr("content",thumbnail);
     $('meta[property="og:image"]').attr("content",thumbnail);
-    $('meta[property="og:description"]').attr("content",deskripsi);
-    $('meta[name="publishdate"]').attr("content",publish);
-    $('meta[name="author"]').attr("content",author);
-    $('meta[itemprop="headline"]').attr("content",deskripsi);
-    $('meta[name="thumbnailUrl"]').attr("content",thumbnail);
-    $('meta[name="pubdate"]').attr("content",publish);
-    $('meta[name="twitter:description"]').attr("content",deskripsi);
     $('meta[name="twitter:image"]').attr("content",thumbnail);
+    $('meta[itemprop="description"]').attr("content",deskripsi);
+    $('meta[name="twitter:description"]').attr("content",deskripsi);
     $('meta[name="description"]').attr("content",deskripsi);
-    $('meta[name="originalTitle"]').attr("content",title);
+    $('meta[property="og:description"]').attr("content",deskripsi);
+    $('meta[property="og:url"]').attr("content",currenUrl);
     $('title').html(title);
 });

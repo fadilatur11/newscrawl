@@ -16,8 +16,8 @@
                     <div class="desc">
                         <p>{!! $detail['content'] !!}</p>
                     </div>
-                    <input type="hidden" id="deskripsi" value="{!! str_replace('<p>','',Str::words($detail['content'],17,'....')) !!}">
-                    <input type="hidden" id="thumbnail" value="{{$detail['image']}}&w=800&zc=1">
+                    <input type="hidden" id="deskripsi" value="{!! str_replace('<p>','',Str::words($detail['content'],8)) !!}">
+                    <input type="hidden" id="thumbnail" value="{{$detail['image']}}">
                     <input type="hidden" id="title" value="{{ucwords($detail['title'])}}">
                     <input type="hidden" id="author" value="{{ucwords($detail['author'])}}">
                     </div>
