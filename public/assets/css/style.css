@@ -558,8 +558,6 @@ ul li {
 .slider-home2 .swiper-slide img {
     width: 100%;
     border-radius: 8px;
-    height: 250px;
-    object-fit: cover;
 }
 
 .slider-home2 .swiper-slide .caption {
