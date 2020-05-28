@@ -1,33 +1,3 @@
-@section('konten')
-<!-- HTML Meta Tags -->
-<title></title>
-<meta name="title" content="">
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="robots" content="index, follow, noodp">
-
-<!-- Google / Search Engine Tags -->
-<meta itemprop="name" content="">
-<meta itemprop="description" content="">
-<meta itemprop="image" content="">
-
-<!-- Facebook Meta Tags -->
-<meta property="og:url" content="">
-<meta property="og:type" content="website">
-<meta property="og:title" content="">
-<meta property="og:description" content="">
-<meta property="og:image" content="">
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="600" />
-<meta property="og:image:height" content="315" />
-
-<!-- Twitter Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="">
-@endsection
-
 @section('metahome')
 <!-- HTML Meta Tags -->
 <title>NGABARIN.ID</title>
