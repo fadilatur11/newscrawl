@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['middleware' => 'guest', 'namespace' => 'Api', 'prefix' => 'crawler'], function() {
+    Route::get('beritajatim', 'CrawlerController@beritaJatim')->name('crawler.beritajatim');
+    Route::get('jatimtimes', 'CrawlerController@jatimTimes')->name('crawler.jatimtimes');
+    Route::get('jawapos', 'CrawlerController@jawaPos')->name('crawler.jawapos');
+    Route::get('pantura', 'CrawlerController@pantura')->name('crawler.pantura');
+    Route::get('tribun', 'CrawlerController@tribun')->name('crawler.tribun');
+    Route::get('warmo', 'CrawlerController@warmo')->name('crawler.warmo');
+});
