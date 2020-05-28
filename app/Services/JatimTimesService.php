@@ -34,7 +34,7 @@ class JatimTimesService
                 'title' => (string) $parsed->title,
                 'link' => (string) $parsed->link,
                 'published_at' => strtotime($parsed->pubDate),
-                'image' => (string) str_replace('.th.', '.md.', $parsed->description->img['src'])
+                'image' => (string) str_replace('.th.', '.', $parsed->description->img['src'])
             ];
             $index += 1;
             if ($index >= 20) {
