@@ -19,6 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','HomeController@index');
 Route::get('/sitemap.xml','HomeController@sitemap');
 Route::get('/detail/{id}/{slug}','DetailController@index');
-Route::get('/more/{offset}','HomeController@more');
+Route::get('/more/{offset}/{limit}','HomeController@more');
 Route::get('/search','SearchController@index');
 Route::get('/search/more/{keywords}/{offset}','SearchController@more');

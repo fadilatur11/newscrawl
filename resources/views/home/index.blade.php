@@ -50,7 +50,7 @@
                <div class="col-50">
                   <div class="content">
                      <a class="external" href="{{ url('/detail/'.$article['id'].'/'.$article['slug']) }}">
-                     <img data-src="{{$article['image']}}" alt="{{$article['title']}}" class="lazy lazy-fade-in">
+                     <img src="{{$article['image']}}" alt="{{$article['title']}}" >
                      </a>
                   </div>
                </div>

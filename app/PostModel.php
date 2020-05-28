@@ -12,7 +12,7 @@ class PostModel extends Model
     {
         $data = PostModel::select('id','title','image','slug','link','author','published_at')
         ->offset(6)
-        ->limit(10)
+        ->limit(5)
         ->orderBy('published_at','desc')
         ->get()
         ->toArray();;
@@ -38,10 +38,10 @@ class PostModel extends Model
         return $data;
     }
 
-    function more($offset)
+    function more($offset,$limit)
     {
         $data = PostModel::select('id','title','image','slug','link','author','published_at')
-        ->limit(10)
+        ->limit($limit)
         ->offset($offset)
         ->orderBy('published_at','desc')
         ->get()
