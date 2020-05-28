@@ -28,11 +28,11 @@ class HomeController extends Controller
      * @param  mixed $offset
      * @return void
      */
-    public function more($offset)
+    public function more($offset,$limit)
     {
         $article = new PostModel;
 
-        return response()->json($article->more($offset));
+        return response()->json($article->more($offset,$limit));
     }
 
     /**

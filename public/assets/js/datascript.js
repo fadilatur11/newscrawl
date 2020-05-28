@@ -18,7 +18,7 @@
 	};
 	// end date
     domain = document.URL;
-   	var limit = 10;
+   	var limit = 5;
    	$('.loadmore').click(function (){
    		// alert('test');
    		var more = Number($("#more").val());
@@ -27,7 +27,7 @@
    		console.log(getdata);
    		$.ajax({
    			method: "GET",
-   			url: domain+"more/"+getdata,
+   			url: domain+"more/"+getdata+'/'+limit,
    			dataType : "JSON",
    		success: function(response){
    			var getmore = response;
