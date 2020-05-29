@@ -51,16 +51,20 @@
                     <div class="row">
                         <div class="col-50">
                             <div class="content">
-                                <a class="external" href="{{ url('/detail/'.$article['id'].'/'.$article['slug']) }}">
-                                    <img src="{{$article['image']}}" alt="{{$article['title']}}">
+                                <a class="external" href="javascript:void(0)"
+                                    data-instant="{{ url('/detail/'.$article['id'].'/'.$article['slug']) }}"
+                                    data-source="{{ $article['link'] }}">
+                                        <img src="{{$article['image']}}" alt="{{$article['title']}}">
                                 </a>
                             </div>
                         </div>
                         <div class="col-50">
                             <div class="content-text">
                                 <span>{{$article['author']}}</span>
-                                <a class="external" href="{{ url('/detail/'.$article['id'].'/'.$article['slug']) }}">
-                                    <h5>{{$article['title']}}</h5>
+                                <a class="external" href="javascript:void(0)"
+                                    data-instant="{{ url('/detail/'.$article['id'].'/'.$article['slug']) }}"
+                                    data-source="{{ $article['link'] }}">
+                                        <h5>{{$article['title']}}</h5>
                                 </a>
                                 <p class="date">{{Carbon\Carbon::parse(date('Y-m-d',$article['published_at']))->diffForHumans()}}</p>
                             </div>
@@ -76,6 +80,26 @@
                 </div>
             </div>
             <!-- end post -->
+        </div>
+
+        <div class="block-modal">
+            <div class="block-modal__option">
+                <div class="block-modal__option-box">
+                    <div class="block-modal__option-box-container">
+                        <div class="block-modal__option-box-container-title">
+                            Kamu ingin baca dimana ?
+                        </div>
+                        <div class="block-modal__option-box-container-action">
+                            <div>
+                                <a class="block-modal__option-box-container-action-button external" href="https://google.com">Baca Instan</a>
+                            </div>
+                            <div>
+                                <a class="block-modal__option-box-container-action-button block-modal__option-box-container-action-button--disabled external" target="blank">Baca Sumber</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <x-footer />
