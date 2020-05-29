@@ -12,11 +12,10 @@ $(document).ready(function () {
             url: domain + "more/" + getdata + '/' + limit,
             dataType: "JSON",
             success: function (response) {
-                
-                $("#setmore").append(response);
+				$("#setmore").append(response);
             }
-        });
-    })
+		});
+    });
 
     $('div.post a.external').click(function() {
         $('.block-modal__option-box-container-action-button').attr('href', $(this).data('instant'))
