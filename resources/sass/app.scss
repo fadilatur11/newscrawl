@@ -1,1 +1,50 @@
-//
+.swiper-container {
+    .swiper-slide {
+        height: auto;
+    }
+
+    img {
+        height: 100%;
+        object-fit: cover;
+        object-position: 0 0;
+    }
+}
+
+.page.page-home.page-current {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.container .col-50 {
+    .content {
+        height: 100px;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            object-position: 0 0;
+        }
+    }
+
+    .content-text h5 {
+        height: 55px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.mt {
+
+    &--5 {
+        margin-top: 5px;
+    }
+
+    &--10 {
+        margin-top: 10px;
+    }
+}
