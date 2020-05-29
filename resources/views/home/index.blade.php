@@ -77,4 +77,4 @@
    </div>
 </div>
 <x-footer/>
-<script src="{{url('/assets')}}/js/datascript.js"></script>
+@include('home.loadmore')
