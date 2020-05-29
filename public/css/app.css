@@ -10,7 +10,7 @@
      object-position: 0 0;
 }
 
-.page.page-home.page-current {
+.page.page-current {
   width: 100%;
   max-width: 500px;
   position: relative;
