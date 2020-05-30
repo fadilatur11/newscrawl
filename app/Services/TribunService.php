@@ -32,7 +32,7 @@ class TribunService
 
         $sitemaps = [];
         foreach ($locs as $index => $loc) {
-            if ($index >= 20) {
+            if ($index >= 10) {
                 break;
             }
 
