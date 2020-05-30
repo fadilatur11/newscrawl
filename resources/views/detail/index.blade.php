@@ -39,6 +39,7 @@
                     </div>
                     <div class="wrap-content">
                         <h4>{{ucwords($detail['title'])}}</h4>
+                        <p><div class="sharethis-inline-share-buttons"></div></p>
                         <p class="date">Tanggal : {{ date('Y-m-d', $detail['published_at']) }}</p>
                         <p>Penulis : <b>{{ucwords($detail['author'])}}</b></p>
                         <input type="hidden" id="publish" value="{{ date('Y-m-d', $detail['published_at']) }}">
@@ -54,3 +55,4 @@
         </div>
     </div>
 <x-footer/>
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=59c899da48a443001140a81b&product=inline-share-buttons' async='async'></script>

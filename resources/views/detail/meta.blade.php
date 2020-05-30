@@ -26,4 +26,5 @@
 <meta name="twitter:title" content="NGABARIN.ID">
 <meta name="twitter:description" content="Kumpulan Berita Terbaru Jawa Timur">
 <meta name="twitter:image" content="">
+<meta name="google-site-verification" content="vmrcROcqybn_IGBvRFjrQfN0tF5GZglHbCuM_7VkONo" />
 @endsection

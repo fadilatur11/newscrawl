@@ -6,6 +6,7 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
 	<meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+	<meta name="google-site-verification" content="vmrcROcqybn_IGBvRFjrQfN0tF5GZglHbCuM_7VkONo" />
 	@include('detail.meta')
 	@yield('metahome')
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">

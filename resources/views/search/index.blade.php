@@ -29,7 +29,7 @@
                     <div class="row">
                         <div class="col-50">
                             <div class="content">
-                                <a class="external" href="{{ url('/detail/'.$data['id'].'/'.$data['slug']) }}">
+                                <a class="external"  href="javascript:void(0)" onclick="showOptionRead('{{ url('/detail/'.$data['id'].'/'.$data['slug']) }}')">
                                     <img alt="{{$data['title']}}" class="lazy-fade-in lazy-loaded" src="{{$data['image']}}" onerror="this.onerror=null; this.src='{{ asset("/images/404.jpg") }}'">
                                 </a>
                             </div>
@@ -37,7 +37,7 @@
                         <div class="col-50">
                             <div class="content-text">
                                 <span>{{$data['author']}}</span>
-                                <a class="external" href="{{ url('/detail/'.$data['id'].'/'.$data['slug']) }}">
+                                <a class="external"  href="javascript:void(0)" onclick="showOptionRead('{{ url('/detail/'.$data['id'].'/'.$data['slug']) }}')">
                                     <h5>{{$data['title']}}</h5>
                                 </a>
                                 <p class="date">{{Carbon\Carbon::parse(date('Y-m-d',$data['published_at']))->diffForHumans()}}</p>
@@ -62,6 +62,26 @@
             </div>
         </div>
         <!-- end post -->
+
+        <div class="block-modal">
+            <div class="block-modal__option">
+                <div class="block-modal__option-box">
+                    <div class="block-modal__option-box-container">
+                        <div class="block-modal__option-box-container-title">
+                            Kamu ingin baca dimana ?
+                        </div>
+                        <div class="block-modal__option-box-container-action">
+                            <div>
+                                <a class="block-modal__option-box-container-action-button external" href="https://google.com">Baca Instan</a>
+                            </div>
+                            <div>
+                                <a class="block-modal__option-box-container-action-button block-modal__option-box-container-action-button--disabled external" target="blank">Baca Sumber</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
     </div>
 </div>
 <x-footer />
