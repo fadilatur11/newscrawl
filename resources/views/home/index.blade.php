@@ -33,8 +33,9 @@
                                 <div class="mask"></div>
                                 <div class="caption">
                                     <span>{{$getslider['author']}}</span>
-                                    <a class="external" href="{{ url('/detail/'.$getslider['id'].'/'.$getslider['slug']) }}">
-                                        <h4>{{$getslider['title']}}</h4>
+                                    <a class="external" href="javascript:void(0)"
+                                        onclick="showOptionRead('{{ url('/detail/'.$getslider['id'].'/'.$getslider['slug']) }}', '{{ $getslider['link'] }}')">
+                                            <h4>{{$getslider['title']}}</h4>
                                     </a>
                                 </div>
                             </div>
@@ -52,8 +53,7 @@
                         <div class="col-50">
                             <div class="content">
                                 <a class="external" href="javascript:void(0)"
-                                    data-instant="{{ url('/detail/'.$article['id'].'/'.$article['slug']) }}"
-                                    data-source="{{ $article['link'] }}">
+                                    onclick="showOptionRead('{{ url('/detail/'.$article['id'].'/'.$article['slug']) }}', '{{ $article['link'] }}')">
                                         <img src="{{$article['image']}}" alt="{{$article['title']}}" onerror="this.onerror=null; this.src='{{ asset("/images/404.jpg") }}'">
                                 </a>
                             </div>
@@ -62,8 +62,7 @@
                             <div class="content-text">
                                 <span>{{$article['author']}}</span>
                                 <a class="external" href="javascript:void(0)"
-                                    data-instant="{{ url('/detail/'.$article['id'].'/'.$article['slug']) }}"
-                                    data-source="{{ $article['link'] }}">
+                                    onclick="showOptionRead('{{ url('/detail/'.$article['id'].'/'.$article['slug']) }}', '{{ $article['link'] }}')">
                                         <h5>{{$article['title']}}</h5>
                                 </a>
                                 <p class="date">{{Carbon\Carbon::parse(date('Y-m-d',$article['published_at']))->diffForHumans()}}</p>
