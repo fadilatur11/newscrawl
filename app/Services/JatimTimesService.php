@@ -37,7 +37,7 @@ class JatimTimesService
                 'image' => (string) str_replace('.th.', '.', $parsed->description->img['src'])
             ];
             $index += 1;
-            if ($index >= 20) {
+            if ($index >= 10) {
                 break;
             }
         }

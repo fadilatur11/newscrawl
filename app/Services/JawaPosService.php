@@ -36,7 +36,7 @@ class JawaPosService
                 'published_at' => strtotime($parsed->lastmod)
             ];
             $index += 1;
-            if ($index >= 20) {
+            if ($index >= 10) {
                 break;
             }
         }
