@@ -23,7 +23,6 @@ class Header extends Component
      */
     public function render()
     {
-        $assets = url('/assets');
-        return view('components.header',['assets'=>$assets]);
+        return view('components.header');
     }
 }

@@ -23,7 +23,6 @@ class Footer extends Component
      */
     public function render()
     {
-        $assets = url('/assets');
-        return view('components.footer',['assets'=>$assets]);
+        return view('components.footer');
     }
 }

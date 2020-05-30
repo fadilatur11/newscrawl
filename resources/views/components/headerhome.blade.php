@@ -9,11 +9,11 @@
 	@include('detail.meta')
 	@yield('metahome')
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-	<link rel="stylesheet" href="{{$assets}}/css/framework7.min.css">
-	<link rel="stylesheet" href="{{$assets}}/css/framework7-icons.css">
+	<link rel="stylesheet" href="{{ asset('assets/css/framework7.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/framework7-icons.css') }}">
 
-	<link rel="stylesheet" type="text/css" href="{{$assets}}/css/demo.css"/>
-	<link rel="stylesheet" type="text/css" href="{{$assets}}/css/style.css" title="default" />
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/demo.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" title="default" />
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
