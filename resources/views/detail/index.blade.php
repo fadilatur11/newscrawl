@@ -35,7 +35,7 @@
              </a>
                 <div class="single-post">
                     <div class="header">
-                        <img src="{{$detail['image']}}" alt="{{ucwords($detail['title'])}}">
+                        <img src="{{$detail['image']}}" alt="{{ucwords($detail['title'])}}" onerror="this.onerror=null; this.src='{{ asset("/images/404.jpg") }}'">
                     </div>
                     <div class="wrap-content">
                         <h4>{{ucwords($detail['title'])}}</h4>

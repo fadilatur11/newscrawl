@@ -30,7 +30,7 @@
                         <div class="col-50">
                             <div class="content">
                                 <a class="external" href="{{ url('/detail/'.$data['id'].'/'.$data['slug']) }}">
-                                    <img alt="{{$data['title']}}" class="lazy-fade-in lazy-loaded" src="{{$data['image']}}">
+                                    <img alt="{{$data['title']}}" class="lazy-fade-in lazy-loaded" src="{{$data['image']}}" onerror="this.onerror=null; this.src='{{ asset("/images/404.jpg") }}'">
                                 </a>
                             </div>
                         </div>

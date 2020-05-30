@@ -29,7 +29,7 @@
                         <div class="swiper-wrapper">
                             @foreach($slider as $getslider)
                             <div class="swiper-slide">
-                                <img src="{{$getslider['image']}}" alt="{{$getslider['title']}}">
+                                <img src="{{$getslider['image']}}" alt="{{$getslider['title']}}" onerror="this.onerror=null; this.src='{{ asset("/images/404.jpg") }}'">
                                 <div class="mask"></div>
                                 <div class="caption">
                                     <span>{{$getslider['author']}}</span>
@@ -54,7 +54,7 @@
                                 <a class="external" href="javascript:void(0)"
                                     data-instant="{{ url('/detail/'.$article['id'].'/'.$article['slug']) }}"
                                     data-source="{{ $article['link'] }}">
-                                        <img src="{{$article['image']}}" alt="{{$article['title']}}">
+                                        <img src="{{$article['image']}}" alt="{{$article['title']}}" onerror="this.onerror=null; this.src='{{ asset("/images/404.jpg") }}'">
                                 </a>
                             </div>
                         </div>
