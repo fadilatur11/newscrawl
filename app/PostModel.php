@@ -53,7 +53,7 @@ class PostModel extends Model
     {
         $data = PostModel::select('id','title','image','slug','link','author','published_at')
         ->offset(0)
-        ->limit(20)
+        ->limit(5)
         ->where('title','LIKE', '%'.$keywords.'%')
         ->orderBy('published_at','desc')
         ->get()
@@ -65,7 +65,7 @@ class PostModel extends Model
     {
         $data = PostModel::select('id','title','image','slug','link','author','published_at')
         ->offset($offset)
-        ->limit(10)
+        ->limit(5)
         ->where('title','LIKE', '%'.$keywords.'%')
         ->orderBy('published_at','desc')
         ->get()
@@ -82,5 +82,17 @@ class PostModel extends Model
         ->get()
         ->toArray();;
         return $data;
+    }
+
+    /**
+     * This method use as scope of count keyword search result.
+     *
+     * @param  mixed $query
+     * @param  mixed $keyword
+     * @return object
+     */
+    public function scopeCountSearch($query, $keyword)
+    {
+        return $query->where('title', 'like', "%$keyword%");
     }
 }

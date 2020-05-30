@@ -20,9 +20,9 @@ class PostService
 
             $post->title = $data['title'];
             $post->content = $data['content'];
-            $post->image = $data['image'];
+            $post->image = self::stabilizeHttps($data['image']);
             $post->slug = Str::slug($post->title);
-            $post->link = (! empty($data['link'])) ? $data['link'] : '';
+            $post->link = (! empty($data['link'])) ? self::stabilizeHttps($data['link']) : '';
             $post->author = strtoupper($data['author']);
             $post->published_at = (! empty($data['published_at'])) ? $data['published_at'] : time();
             $post->save();
@@ -31,5 +31,19 @@ class PostService
         }
 
         return false;
+    }
+
+    /**
+     * This method use to convert http to https if available.
+     *
+     * @param  mixed $data
+     * @return string
+     */
+    public static function stabilizeHttps($data)
+    {
+        if (strpos($data, 'http://') !== false) {
+            return str_replace('http://', 'https://', $data);
+        }
+        return $data;
     }
 }

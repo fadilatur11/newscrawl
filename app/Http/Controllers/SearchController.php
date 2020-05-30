@@ -21,6 +21,7 @@ class SearchController extends Controller
 
         return view('search.index', [
             'search' => $article->search($keywords),
+            'searchCount' => PostModel::countSearch($keywords)->count(),
             'keywords' => $keywords
         ]);
     }

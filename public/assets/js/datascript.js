@@ -10,14 +10,13 @@ $(document).ready(function () {
         $.ajax({
             method: "GET",
             url: domain + "more/" + getdata + '/' + limit,
-            dataType: "JSON",
             success: function (response) {
-				$("#setmore").append(response);
+				$("#setmore").append(response)
             }
 		});
     });
 
-    $('div.post a.external').click(function() {
+    $('body').on('click','div.post a.external', function() {
         $('.block-modal__option-box-container-action-button').attr('href', $(this).data('instant'))
         $('.block-modal__option-box-container-action-button--disabled').attr('href', $(this).data('source'))
         $('.block-modal__option').css('display', 'flex')

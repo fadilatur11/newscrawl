@@ -50,9 +50,11 @@
                     <div class="link-more">
                         <input type="hidden" id="keywords" value="{{$keywords}}">
                         <input type="hidden" id="baseurl" value="{{url('/')}}">
+                        @if ($searchCount > 5)
                         <button type="button" class="button button-custom loadmore">Selanjutnya</button>
+                        @endif
                         <!-- offset -->
-                        <input type="hidden" id="more" value="11">
+                        <input type="hidden" id="more" value="6">
                         <!-- end offset -->
                     </div>
                 </div>
