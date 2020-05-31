@@ -69,7 +69,7 @@ class JawaPosService
                 'content' => $post_content,
                 'image' => $result->find('figure.single-thumb > img', 0)->src,
                 'link' => $sitemap['link'],
-                'author' => 'radabromo jawapos',
+                'author' => 'radarbromo jawapos',
                 'published_at' => $sitemap['published_at']
             ]);
         }
