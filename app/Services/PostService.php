@@ -16,12 +16,18 @@ class PostService
     public static function create($data = null)
     {
         if (! empty($data['title']) && ! empty($data['content']) && ! empty($data['image'])) {
+            $slug = Str::slug($data['title']);
+
+            if (PostModel::where('slug', $slug)->first()) {
+                return true;
+            }
+
             $post = new PostModel();
 
             $post->title = $data['title'];
             $post->content = $data['content'];
             $post->image = self::stabilizeHttps($data['image']);
-            $post->slug = Str::slug($post->title);
+            $post->slug = $slug;
             $post->link = (! empty($data['link'])) ? self::stabilizeHttps($data['link']) : '';
             $post->author = strtoupper($data['author']);
             $post->published_at = (! empty($data['published_at'])) ? $data['published_at'] : time();
