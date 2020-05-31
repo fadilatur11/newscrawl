@@ -3,7 +3,7 @@
 @foreach($sitemap as $value)
   <url>
     <loc>{{url('/detail/'.$value['id'].'/'.$value['slug'])}}</loc>
-    <lastmod>{{ date('Y-m-d H:i:s', $value['published_at']) }}</lastmod>
+    <lastmod>{{ date('Y-m-d', $value['published_at']) }}</lastmod>
   </url>
   @endforeach
 </urlset>
