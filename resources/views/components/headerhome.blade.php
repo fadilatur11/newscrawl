@@ -16,7 +16,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/demo.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" title="default" />
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css?v=0.1') }}">
+
 </head>
 <body>
 	<div id="app">

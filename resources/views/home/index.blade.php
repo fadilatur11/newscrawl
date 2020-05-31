@@ -90,7 +90,7 @@
                         </div>
                         <div class="block-modal__option-box-container-action">
                             <div>
-                                <a class="block-modal__option-box-container-action-button external" href="https://google.com">Baca Instan</a>
+                                <a class="block-modal__option-box-container-action-button block-modal__option-box-container-action-button--enabled external">Baca Instan</a>
                             </div>
                             <div>
                                 <a class="block-modal__option-box-container-action-button block-modal__option-box-container-action-button--disabled external" target="blank">Baca Sumber</a>
