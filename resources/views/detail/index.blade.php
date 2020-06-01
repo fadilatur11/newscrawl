@@ -2,20 +2,20 @@
 <!-- HTML Meta Tags -->
 <title>{{ucwords($detail['title'])}}</title>
 <meta name="title" content="{{ucwords($detail['title'])}}">
-<meta name="description" content="{!! str_replace('<p>','',Str::words($detail['content'],8)) !!}">
+<meta name="description" content="{!! strip_tags(Str::words($detail['content'],8)) !!}">
 <meta name="keywords" content="{{ucwords($detail['title'])}}">
 <meta name="robots" content="index, follow, noodp">
 
 <!-- Google / Search Engine Tags -->
 <meta itemprop="name" content="{{ucwords($detail['title'])}}">
-<meta itemprop="description" content="{!! str_replace('<p>','',Str::words($detail['content'],8)) !!}">
+<meta itemprop="description" content="{!! strip_tags(Str::words($detail['content'],8)) !!}">
 <meta itemprop="image" content="{{$detail['image']}}" alt="{{ucwords($detail['title'])}}">
 
 <!-- Facebook Meta Tags -->
 <meta property="og:url" content="{{url()->current()}}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ucwords($detail['title'])}}">
-<meta property="og:description" content="{!! str_replace('<p>','',Str::words($detail['content'],8)) !!}">
+<meta property="og:description" content="{!! strip_tags(Str::words($detail['content'],8)) !!}">
 <meta property="og:image" content="{{$detail['image']}}" alt="{{ucwords($detail['title'])}}">
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="600" />
@@ -24,7 +24,7 @@
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{url()->current()}}">
-<meta name="twitter:description" content="{!! str_replace('<p>','',Str::words($detail['content'],8)) !!}">
+<meta name="twitter:description" content="{!! strip_tags(Str::words($detail['content'],8)) !!}">
 <meta name="twitter:image" content="{{$detail['image']}}">
 @endsection
 <x-header/>
