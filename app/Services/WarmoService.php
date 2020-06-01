@@ -25,11 +25,15 @@ class WarmoService
     public static function getSitemap()
     {
         $request = CurlService::request("https://www.wartabromo.com/post-sitemap24.xml");
-        $parseRequest = simplexml_load_string($request);
+        $parseRequest = (array) simplexml_load_string($request);
+
+        $urlParseRequest = $parseRequest['url'];
+
+        krsort($urlParseRequest);
 
         $index = 0;
         $sitemaps = [];
-        foreach ($parseRequest as $parsed) {
+        foreach ($urlParseRequest as $parsed) {
             $sitemaps[] = [
                 'link' => (string) $parsed->loc,
                 'published_at' => strtotime($parsed->lastmod)
