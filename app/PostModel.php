@@ -84,6 +84,21 @@ class PostModel extends Model
         return $data;
     }
 
+    function bacajuga(){
+        $data = PostModel::select('id','title','slug','published_at','link')
+        ->inRandomOrder()
+        ->first()
+        ->toArray();
+        return $data;
+    }
+    function bacajuga2(){
+        $data = PostModel::select('id','title','slug','published_at','link')
+        ->inRandomOrder()
+        ->first()
+        ->toArray();
+        return $data;
+    }
+
     /**
      * This method use as scope of count keyword search result.
      *

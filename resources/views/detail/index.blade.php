@@ -44,7 +44,46 @@
                         <p>Penulis : <b>{{ucwords($detail['author'])}}</b></p>
                         <input type="hidden" id="publish" value="{{ date('Y-m-d', $detail['published_at']) }}">
                     <div class="desc">
-                        <p>{!! $detail['content'] !!}</p>
+                    @php $kalimat = explode("<p>",$detail['content']);
+                    $length = count($kalimat);
+                    @endphp
+                        <p>
+                        @for ($i = 0; $i < 3; $i++)
+                        {!! $kalimat[$i] !!}
+                        @endfor
+                        </p>
+                        <p class="readother"><b>Baca Juga :</b><a href="javascript:void(0)"
+                                    onclick="showOptionRead('{{ url('/detail/'.$bacajuga['id'].'/'.$bacajuga['slug']) }}', '{{ $bacajuga['link'] }}')"> {!! $bacajuga['title'] !!}</a></p>
+                        @for ($u = 3; $u < 5; $u++)
+                        {!! $kalimat[$u] !!}
+                        @endfor
+                        <p class="readother"><b>Baca Juga :</b><a href="javascript:void(0)"
+                                    onclick="showOptionRead('{{ url('/detail/'.$bacajuga2['id'].'/'.$bacajuga2['slug']) }}', '{{ $bacajuga2['link'] }}')"> {!! $bacajuga2['title'] !!}</a></p>
+                        @for ($a = 5; $a < $length; $a++)
+                        {!! $kalimat[$a] !!}
+                        @endfor
+                        
+                        <!-- modal -->
+                <div class="block-modal">
+            <div class="block-modal__option">
+                <div class="block-modal__option-box">
+                    <div class="block-modal__option-box-container">
+                        <div class="block-modal__option-box-container-title">
+                            Kamu ingin baca dimana ?
+                        </div>
+                        <div class="block-modal__option-box-container-action">
+                            <div>
+                                <a class="block-modal__option-box-container-action-button block-modal__option-box-container-action-button--enabled external">Baca Instan</a>
+                            </div>
+                            <div>
+                                <a class="block-modal__option-box-container-action-button block-modal__option-box-container-action-button--disabled external" target="blank">Baca Sumber</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <!-- endmodal -->
+
                     </div>
                     <input type="hidden" id="deskripsi" value="{!! str_replace('<p>','',Str::words($detail['content'],8)) !!}">
                     <input type="hidden" id="thumbnail" value="{{$detail['image']}}">
@@ -52,7 +91,19 @@
                     <input type="hidden" id="author" value="{{ucwords($detail['author'])}}">
                     </div>
                 </div>
+
         </div>
     </div>
 <x-footer/>
+<script>
+$('.block-modal__option-box-container-action-button--disabled').click(function () {
+        $('.block-modal__option').css('display', 'none')
+    })
+
+    function showOptionRead(instant, source) {
+    $('.block-modal__option-box-container-action-button').attr('href', instant)
+    $('.block-modal__option-box-container-action-button--disabled').attr('href', source)
+    $('.block-modal__option').css('display', 'flex')
+}
+    </script>
 <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=59c899da48a443001140a81b&product=inline-share-buttons' async='async'></script>
