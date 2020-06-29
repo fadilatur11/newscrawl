@@ -18,7 +18,8 @@ class DetailController extends Controller
         return view('detail.index', [
             'detail' => $article->detail($id),
             'bacajuga' => $article->bacajuga(),
-            'bacajuga2' => $article->bacajuga2()]);
+            'bacajuga2' => $article->bacajuga2(),
+            'bacajuga3' => $article->bacajuga3(3)]);
     }
 
 }

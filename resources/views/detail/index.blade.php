@@ -62,9 +62,46 @@
                         @for ($a = 5; $a < $length; $a++)
                         {!! $kalimat[$a] !!}
                         @endfor
-                        
-                        <!-- modal -->
-                <div class="block-modal">
+                    </div>
+
+                    <div class="related-post">
+                           <div class="wrap-title">
+                              <h3>Baca Juga</h3>
+                           </div>
+                    @foreach($bacajuga3 as $bc3)
+                        <div class="row">
+                            <div class="col-50">
+                                <div class="content">
+                                    <a class="external" href="javascript:void(0)"
+                                        onclick="showOptionRead('{{ url('/detail/'.$bc3['id'].'/'.$bc3['slug']) }}', '{{ $bc3['link'] }}')">
+                                            <img src="{{$bc3['image']}}" alt="{{$bc3['title']}}" onerror="this.onerror=null; this.src='{{ asset("/images/404.jpg") }}'">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-50">
+                                <div class="content-text">
+                                    <span>{{$bc3['author']}}</span>
+                                    <a class="external" href="javascript:void(0)"
+                                        onclick="showOptionRead('{{ url('/detail/'.$bc3['id'].'/'.$bc3['slug']) }}', '{{ $bc3['link'] }}')">
+                                            <h5>{{$bc3['title']}}</h5>
+                                    </a>
+                                    <p class="date">{{Carbon\Carbon::parse(date('Y-m-d',$bc3['published_at']))->diffForHumans()}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                           
+                        </div>
+
+                    <input type="hidden" id="deskripsi" value="{!! str_replace('<p>','',Str::words($detail['content'],8)) !!}">
+                    <input type="hidden" id="thumbnail" value="{{$detail['image']}}">
+                    <input type="hidden" id="title" value="{{ucwords($detail['title'])}}">
+                    <input type="hidden" id="author" value="{{ucwords($detail['author'])}}">
+                    </div>
+                </div>
+                
+                <!-- modal -->
+            <div class="block-modal">
             <div class="block-modal__option">
                 <div class="block-modal__option-box">
                     <div class="block-modal__option-box-container">
@@ -83,16 +120,8 @@
                 </div>
             </div>
                     <!-- endmodal -->
-
-                    </div>
-                    <input type="hidden" id="deskripsi" value="{!! str_replace('<p>','',Str::words($detail['content'],8)) !!}">
-                    <input type="hidden" id="thumbnail" value="{{$detail['image']}}">
-                    <input type="hidden" id="title" value="{{ucwords($detail['title'])}}">
-                    <input type="hidden" id="author" value="{{ucwords($detail['author'])}}">
-                    </div>
-                </div>
-
         </div>
+        
     </div>
 <x-footer/>
 <script>

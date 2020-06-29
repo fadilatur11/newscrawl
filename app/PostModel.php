@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class PostModel extends Model
 {
@@ -95,6 +96,18 @@ class PostModel extends Model
         $data = PostModel::select('id','title','slug','published_at','link')
         ->inRandomOrder()
         ->first()
+        ->toArray();
+        return $data;
+    }
+
+    function bacajuga3($day){
+        $today = time();
+        $beforetoday = strtotime('-'.$day.' day', $today);
+        $data = PostModel::select('id','title','slug','published_at','link','image','author')
+        ->whereRaw("`published_at` <= $today AND `published_at` >= $beforetoday")
+        ->orderBy('published_at','desc')
+        ->limit(5)
+        ->get()
         ->toArray();
         return $data;
     }
