@@ -64,42 +64,42 @@
                         @endfor
                     </div>
 
-                    <div class="post segments">
-                           <div class="wrap-title">
-                              <h3>Baca Juga</h3>
-                           </div>
-                    @foreach($bacajuga3 as $bc3)
-                        <div class="row">
-                            <div class="col-50">
-                                <div class="content">
-                                    <a class="external" href="javascript:void(0)"
-                                        onclick="showOptionRead('{{ url('/detail/'.$bc3['id'].'/'.$bc3['slug']) }}', '{{ $bc3['link'] }}')">
-                                            <img src="{{$bc3['image']}}" alt="{{$bc3['title']}}" onerror="this.onerror=null; this.src='{{ asset("/images/404.jpg") }}'">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-50">
-                                <div class="content-text">
-                                    <span>{{$bc3['author']}}</span>
-                                    <a class="external" href="javascript:void(0)"
-                                        onclick="showOptionRead('{{ url('/detail/'.$bc3['id'].'/'.$bc3['slug']) }}', '{{ $bc3['link'] }}')">
-                                            <h5>{{$bc3['title']}}</h5>
-                                    </a>
-                                    <p class="date">{{Carbon\Carbon::parse(date('Y-m-d',$bc3['published_at']))->diffForHumans()}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                    
-                           
-                        </div>
-
                     <input type="hidden" id="deskripsi" value="{!! str_replace('<p>','',Str::words($detail['content'],8)) !!}">
                     <input type="hidden" id="thumbnail" value="{{$detail['image']}}">
                     <input type="hidden" id="title" value="{{ucwords($detail['title'])}}">
                     <input type="hidden" id="author" value="{{ucwords($detail['author'])}}">
                     </div>
                 </div>
+
+                <div class="post segments">
+                        <div class="container">
+                            <div class="wrap-title">
+                              <h3>Baca Juga</h3>
+                           </div>
+                            @foreach($bacajuga3 as $bcj)
+                            <div class="row">
+                                <div class="col-50">
+                                    <div class="content">
+                                        <a class="external" href="javascript:void(0)"
+                                            onclick="showOptionRead('{{ url('/detail/'.$bcj['id'].'/'.$bcj['slug']) }}', '{{ $bcj['link'] }}')">
+                                                <img src="{{$bcj['image']}}" alt="{{$bcj['title']}}" onerror="this.onerror=null; this.src='{{ asset("/images/404.jpg") }}'">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-50">
+                                    <div class="content-text">
+                                        <span>{{$bcj['author']}}</span>
+                                        <a class="external" href="javascript:void(0)"
+                                            onclick="showOptionRead('{{ url('/detail/'.$bcj['id'].'/'.$bcj['slug']) }}', '{{ $bcj['link'] }}')">
+                                                <h5>{{$bcj['title']}}</h5>
+                                        </a>
+                                        <p class="date">{{Carbon\Carbon::parse(date('Y-m-d',$bcj['published_at']))->diffForHumans()}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                 
                 <!-- modal -->
             <div class="block-modal">
