@@ -64,7 +64,7 @@
                         @endfor
                     </div>
 
-                    <div class="related-post">
+                    <div class="post segments">
                            <div class="wrap-title">
                               <h3>Baca Juga</h3>
                            </div>
@@ -90,6 +90,7 @@
                             </div>
                         </div>
                     @endforeach
+                    
                            
                         </div>
 

@@ -964,7 +964,7 @@ ul li {
     position: relative;
     top: -20px;
     border-radius: 20px;
-    z-index: 9;
+    z-index: 1;
 }
 
 .single-post .wrap-content .behaviour {
