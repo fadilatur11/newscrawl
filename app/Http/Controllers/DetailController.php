@@ -19,7 +19,7 @@ class DetailController extends Controller
             'detail' => $article->detail($id),
             'bacajuga' => $article->bacajuga(),
             'bacajuga2' => $article->bacajuga2(),
-            'bacajuga3' => $article->bacajuga3(3)]);
+            'bacajuga3' => $article->bacajuga3(3,$id)]);
     }
 
 }

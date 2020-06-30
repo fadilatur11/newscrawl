@@ -100,11 +100,12 @@ class PostModel extends Model
         return $data;
     }
 
-    function bacajuga3($day){
+    function bacajuga3($day,$id){
         $today = time();
         $beforetoday = strtotime('-'.$day.' day', $today);
         $data = PostModel::select('id','title','slug','published_at','link','image','author')
         ->whereRaw("`published_at` <= $today AND `published_at` >= $beforetoday")
+        ->whereNotIn('id',[$id])
         ->orderBy('published_at','desc')
         ->limit(5)
         ->get()
@@ -124,3 +125,4 @@ class PostModel extends Model
         return $query->where('title', 'like', "%$keyword%");
     }
 }
+
