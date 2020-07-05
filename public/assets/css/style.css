@@ -964,7 +964,7 @@ ul li {
     position: relative;
     top: -20px;
     border-radius: 20px;
-    z-index: 9;
+    z-index: 1;
 }
 
 .single-post .wrap-content .behaviour {
@@ -2239,4 +2239,7 @@ ul li {
 }
 .searchsegment{
     padding: 15px 0 30px;
+}
+.baca-juga{
+    display: none;
 }

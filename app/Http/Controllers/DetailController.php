@@ -15,8 +15,11 @@ class DetailController extends Controller
     public function index($id)
     {
         $article = new PostModel;
-
-        return view('detail.index', ['detail' => $article->detail($id)]);
+        return view('detail.index', [
+            'detail' => $article->detail($id),
+            'bacajuga' => $article->bacajuga(),
+            'bacajuga2' => $article->bacajuga2(),
+            'bacajuga3' => $article->bacajuga3(3,$id)]);
     }
 
 }
